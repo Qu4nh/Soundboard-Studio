@@ -1,0 +1,33 @@
+{
+  "name": "soundboard-studio",
+  "version": "1.0.0",
+  "private": true,
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "author": "Qu4nh",
+  "description": "Desktop soundboard with audio editing, recording and a live community library",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "vite build",
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs",
+    "bench:replay": "node --expose-gc scripts/benchmark-replay.mjs",
+    "verify": "npm run test && npm run build",
+    "prepackage": "node -e \"require('electron')\"",
+    "package": "npm run build && electron-builder --win portable --config electron-builder.json"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "tone": "^15.1.22",
+    "uiohook-napi": "1.5.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@vitejs/plugin-react": "4.7.0",
+    "electron": "45.3.3",
+    "electron-builder": "26.0.12",
+    "vite": "6.4.1"
+  }
+}

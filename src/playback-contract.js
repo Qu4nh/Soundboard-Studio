@@ -1,0 +1,1 @@
+export const modeOptions={restart:{loop:true,stopOthers:false,muteOthers:false,muteVoice:false},pause:{loop:false,stopOthers:true,muteOthers:false,muteVoice:false},stop:{loop:false,stopOthers:false,muteOthers:false,muteVoice:false},overlap:{loop:true,stopOthers:true,muteOthers:true,muteVoice:false},hold:{loop:true,stopOthers:false,muteOthers:false,muteVoice:false}};

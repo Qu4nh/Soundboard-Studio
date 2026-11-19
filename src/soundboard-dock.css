@@ -1,0 +1,78 @@
+/* A compact desktop soundboard controller: recessed display, keycap, push encoder. */
+.workspace:has(.soundboard-dock) .pads-area{padding-bottom:188px}
+.workspace.settings-workspace:has(.soundboard-dock){padding-bottom:190px}
+.transport.soundboard-dock{position:absolute;left:50%;right:auto;bottom:42px;transform:translateX(-50%);width:min(660px,calc(100% - 40px));height:126px;min-height:126px;display:flex;align-items:center;justify-content:flex-start;gap:18px;padding:16px 24px;background:repeating-linear-gradient(0deg,#ffffff02 0 1px,transparent 1px 3px),linear-gradient(135deg,#434a4a,#303737 48%,#252c2c);border:1px solid #606a68;border-radius:12px;box-shadow:inset 0 1px 0 #9ba3a077,inset 0 -2px 0 #131919,0 5px 0 #101616,0 6px 0 #59615d,0 14px 24px #0009;color:#e1e6de;container-type:inline-size;container-name:soundboard-dock;overflow:visible;z-index:8}
+.soundboard-dock:before,.soundboard-dock:after{display:none!important}
+.soundboard-dock .dock-screw{position:absolute;top:8px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#59615e,#252c2a);border:1px solid #1c2221;box-shadow:0 1px 0 #7a827855,inset 0 1px 1px #ffffff25;pointer-events:none}
+.soundboard-dock .dock-screw:after{content:'';position:absolute;left:1px;right:1px;top:2px;height:1px;background:#101615;transform:rotate(-32deg)}
+.soundboard-dock .screw-left{left:9px}.soundboard-dock .screw-right{right:9px}
+.soundboard-dock .dock-stop{position:relative;left:auto;top:auto;display:flex;flex-direction:column;justify-content:center;gap:7px;width:70px;height:70px;min-width:70px;margin:0;padding:10px 4px 7px;border:1px solid #8f5b4f;border-radius:7px;background:linear-gradient(#8a483c,#633128 76%,#54271f);color:#f2d7c5;box-shadow:0 4px 0 #211b18,0 5px 0 #68665c,inset 0 1px 1px #d8987d66,inset 0 -3px 2px #3d1d19;text-shadow:0 -1px 0 #3e201b;flex:none;transition:transform .06s,box-shadow .06s}
+.soundboard-dock .dock-stop>svg{width:17px;height:17px}
+.soundboard-dock .dock-stop>span:last-child{font-family:'Segoe UI',sans-serif;font-size:9px;line-height:12px;font-weight:700;letter-spacing:1px;white-space:nowrap}
+.soundboard-dock .dock-stop:hover{background:linear-gradient(#a35a47,#74382a);color:#fff0de}
+.soundboard-dock .dock-stop:active{transform:translateY(3px);box-shadow:0 1px 0 #211b18,inset 0 1px 3px #2b160f88}
+.soundboard-dock .stop-led{position:absolute;top:7px;right:8px;width:4px;height:4px;border-radius:50%;background:#35100c;box-shadow:inset 0 1px 2px #000b,0 1px 0 #c88a6d44}
+.soundboard-dock .dock-stop.has-audio .stop-led{background:#ff9c69;box-shadow:0 0 5px #ff6d3677,inset 0 1px 1px #ffd4a4}
+.soundboard-dock .dock-divider{width:1px;height:64px;background:#151e1c;box-shadow:1px 0 0 #6e787155;flex:none}
+.soundboard-dock .dock-current{display:block;flex:1;min-width:110px;height:81px;padding:8px 11px 7px;background:repeating-linear-gradient(0deg,transparent 0 2px,#00000009 2px 3px),#16231e;border:5px solid #202726;border-radius:6px;box-shadow:0 1px 0 #7b857b77,inset 0 2px 7px #000a,inset 1px 0 2px #0007;color:#bbd6b2;overflow:hidden}
+.soundboard-dock .dock-display-header{display:flex;justify-content:space-between;gap:8px;margin-bottom:4px;font-family:Consolas,'Courier New',monospace;font-size:8px;line-height:10px;letter-spacing:1.3px;color:#77977f}
+.soundboard-dock .dock-signal{white-space:nowrap;color:#88a58a}
+.soundboard-dock .dock-signal.on{color:#c6e2b9;text-shadow:0 0 5px #a4eeb137}
+.soundboard-dock .now-playing{position:static;left:auto;bottom:auto;transform:none;max-width:none;width:100%;min-width:0;text-align:left;flex:1}
+.soundboard-dock .now-playing strong{display:block;max-width:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:Consolas,'Courier New',monospace;font-size:14px;line-height:19px;font-weight:400;color:#c4ddb9;text-shadow:0 0 5px #b1dc9b20}
+.soundboard-dock .dock-playback-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;height:13px;margin-bottom:6px;font-family:Consolas,'Courier New',monospace;font-size:9px;line-height:12px;color:#8fad91}
+.soundboard-dock .dock-playback-meta>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.soundboard-dock .dock-playback-meta time{font-size:9px;white-space:nowrap;font-variant-numeric:tabular-nums;color:#adcaa8;flex:none}
+.soundboard-dock .playback-track{display:block;width:100%;height:2px;background:#355042;overflow:hidden;border-radius:0;margin:0}
+.soundboard-dock .playback-track>i{display:block;height:100%;background:#a9c99e;border-radius:0}
+.soundboard-dock.is-idle .playback-track{opacity:.4}
+.soundboard-dock .transport-volume{display:flex;flex-direction:column;align-items:center;gap:1px;padding:0;border:0;flex:none;width:78px}
+.soundboard-dock .dock-knob-scale{position:relative;width:78px;height:75px;display:flex;justify-content:center}
+.soundboard-dock .knob-min,.soundboard-dock .knob-max{position:absolute;bottom:3px;font-family:Consolas,monospace;font-size:8px;line-height:10px;color:#9daaa0;text-shadow:0 1px 0 #151c18}
+.soundboard-dock .knob-min{left:5px}.soundboard-dock .knob-max{right:0}
+.soundboard-dock .dock-knob{position:relative;width:64px;height:64px;border-radius:50%;background:#171d1c;box-shadow:0 3px 4px #000a,0 0 0 4px #1b2321,0 0 0 5px #68726b55}
+.soundboard-dock .dock-knob:before{content:'';position:absolute;inset:1px;border-radius:50%;background:repeating-conic-gradient(#66706b 0deg 4deg,#353e38 4deg 8deg);box-shadow:inset 0 1px 1px #a9b4ab55,inset 0 -2px 2px #09120e}
+.soundboard-dock .dock-knob:after{content:'';position:absolute;inset:6px;border-radius:50%;background:linear-gradient(135deg,#737d76,#414c45 58%,#333f36);border:1px solid #6b776d;box-shadow:inset 1px 1px 3px #b6c3b04a,inset -1px -3px 4px #152117,0 2px 3px #0006}
+.soundboard-dock .dock-knob-rotor{position:absolute;inset:0;z-index:2;pointer-events:none}
+.soundboard-dock .dock-knob-rotor>i{position:absolute;top:8px;left:calc(50% - 1px);width:3px;height:10px;border-radius:1px;background:#d3dfc4;box-shadow:0 1px 1px #0008}
+.soundboard-dock .dock-knob-push{position:absolute;inset:13px;width:38px;height:38px;display:grid;place-items:center;border:0;border-radius:50%;padding:0;background:transparent;color:#202e23;box-shadow:none;z-index:3;cursor:ns-resize;touch-action:none;outline-offset:7px}
+.soundboard-dock .dock-knob-push>svg{filter:drop-shadow(0 1px 0 #a9baa64a)}
+.soundboard-dock .dock-volume.is-muted .dock-knob-push{color:#c8856b}
+.soundboard-dock .dock-volume.is-muted .dock-knob-rotor>i{background:#b4795f}
+.soundboard-dock .dock-knob-input{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:4;pointer-events:none;margin:0;padding:0}
+.soundboard-dock .dock-knob:has(.dock-knob-input:focus-visible){outline:2px solid #b9d0ab;outline-offset:7px}
+.soundboard-dock .dock-knob-caption{display:flex;align-items:baseline;justify-content:space-between;width:78px;gap:6px;font-size:8px;line-height:12px;color:#b6c2b5;text-shadow:0 1px 0 #131c16;letter-spacing:.8px}
+.soundboard-dock .dock-knob-caption output{font-family:Consolas,monospace;font-size:10px;letter-spacing:0;color:#d3dec9;font-variant-numeric:tabular-nums}
+.soundboard-dock .dock-output{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;width:68px;min-width:38px;height:87px;flex:none;border:0;border-radius:5px;padding:0;background:none;color:#a9b9ac;text-shadow:0 1px 0 #172018}
+.soundboard-dock .dock-port{display:grid;place-items:center;width:39px;height:39px;border:5px solid #17211c;border-radius:50%;background:radial-gradient(ellipse at 35% 30%,#47594b,#25372a 66%,#142218);box-shadow:0 1px 0 #8b9b894d,inset 0 2px 5px #000a,0 0 0 1px #526655;color:#9daf99}
+.soundboard-dock .dock-output:hover .dock-port,.soundboard-dock .dock-output.open .dock-port{color:#d6ecc6;border-color:#223427;box-shadow:0 1px 0 #8b9b894d,inset 0 2px 5px #000a,0 0 0 1px #829d7d}
+.soundboard-dock .dock-output-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:Consolas,monospace;font-size:9px;line-height:12px;max-width:68px;color:#b6c6b4}
+.soundboard-dock .dock-output-caption{display:flex;align-items:center;gap:4px;font-size:8px;line-height:10px;font-weight:600;letter-spacing:1px;color:#b7c4b5}
+.soundboard-dock .dock-routing{position:absolute;right:0;bottom:calc(100% + 14px);width:286px;padding:15px;border:1px solid #596e5c;border-radius:8px;background:#252f28;box-shadow:inset 0 1px 0 #9aa68c22,0 12px 30px #0009;color:#e7f0e9;font-size:12px;z-index:20}
+.soundboard-dock .dock-routing header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.soundboard-dock .dock-routing header strong{font-size:12px;font-weight:600}
+.soundboard-dock .dock-routing header button{height:25px;width:25px;padding:0;color:#9eb9a8;border-radius:4px}
+.soundboard-dock .dock-routing select{height:38px;width:100%;padding:0 9px;font-size:12px;color:#e8f0eb;background:#101b14;border:1px solid #4c6253;border-radius:5px}
+.soundboard-dock .dock-monitor{display:flex;align-items:center;gap:9px;margin:15px 0;cursor:pointer;color:#c1d1c6;font-size:12px}
+.soundboard-dock .dock-monitor input{width:15px;height:15px;margin:0;accent-color:#a8c999}
+.soundboard-dock .dock-settings-link{display:flex;align-items:center;justify-content:flex-start;gap:8px;border:0;border-top:1px solid #45574a;padding:13px 0 0;width:100%;font-size:11px;color:#b1cbb9}
+.soundboard-dock button:focus-visible,.soundboard-dock select:focus-visible{outline:2px solid #b9d0ab;outline-offset:3px}
+@container soundboard-dock (max-width:560px){.soundboard-dock .dock-output-name{display:none}.soundboard-dock .dock-output{width:40px}.soundboard-dock .dock-volume{width:68px}.soundboard-dock .dock-knob-caption{width:68px}}
+@container soundboard-dock (max-width:430px){.soundboard-dock .dock-playback-meta time{display:none}.soundboard-dock .dock-stop{width:58px;min-width:58px;height:66px}.soundboard-dock .dock-current{padding-inline:7px}.soundboard-dock .dock-display-header{font-size:7px;letter-spacing:.5px}.soundboard-dock .dock-knob{width:56px;height:56px}.soundboard-dock .dock-knob-push{inset:9px}.soundboard-dock .dock-knob-scale{height:68px}.soundboard-dock .dock-volume{width:62px}.soundboard-dock .dock-knob-caption{width:62px}.soundboard-dock .dock-divider{display:none}}
+
+/* Full-size drag surface, precision entry and a separate mute key. */
+.soundboard-dock .dock-volume{width:86px;gap:2px}
+.soundboard-dock .dock-knob-scale{height:66px;width:78px}
+.soundboard-dock .dock-knob-face{position:absolute;inset:0;display:grid;place-items:center;z-index:3;color:#243326;pointer-events:none;filter:drop-shadow(0 1px #c6d4ba44)}
+.soundboard-dock .is-muted .dock-knob-face{color:#d39b7b}
+.soundboard-dock .dock-knob-input{pointer-events:auto;cursor:grab;touch-action:none;user-select:none}
+.soundboard-dock .dock-knob-input:active{cursor:grabbing}
+.soundboard-dock .dock-knob-caption{width:84px;height:30px;align-items:center;justify-content:center;gap:4px;letter-spacing:0}
+.soundboard-dock .dock-mute{width:30px;height:30px;min-width:30px;padding:0;border:1px solid #19231b;border-radius:5px;background:linear-gradient(#455044,#303b30);box-shadow:inset 0 1px #ffffff16,0 2px #172016;color:#b8c7ad}
+.soundboard-dock .dock-mute[aria-pressed=true]{background:#492f25;color:#e4ba9e;border-color:#a06d5055;box-shadow:inset 0 1px 3px #0008}
+.soundboard-dock .dock-volume-value{display:flex;align-items:center;height:30px;width:50px;flex:none;background:#152217;border:1px solid #101b12;border-radius:5px;box-shadow:inset 0 2px 4px #0007;color:#adbea1}
+.soundboard-dock .dock-volume-value input{width:36px;height:28px;border:0!important;box-shadow:none!important;background:transparent!important;color:#d4e4c2;padding:0 0 0 3px;text-align:center;appearance:textfield;font:12px Consolas,monospace}
+.soundboard-dock .dock-volume-value input::-webkit-inner-spin-button,.soundboard-dock .dock-volume-value input::-webkit-outer-spin-button{appearance:none}
+.soundboard-dock .dock-volume-value span{font:10px Consolas,monospace;pointer-events:none;padding-right:3px}
+.soundboard-dock .dock-volume-value:focus-within{outline:2px solid #b9d0ab;outline-offset:2px}
+@container soundboard-dock (max-width:430px){.soundboard-dock .dock-volume{width:84px}.soundboard-dock .dock-knob-scale{height:60px}}

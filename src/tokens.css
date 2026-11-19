@@ -1,0 +1,16 @@
+/* Neutral control tokens for the studio theme. */
+:root{
+ --hy-color-surface-panel-canvas:#303737;
+ --hy-color-surface-root:#171c1c;
+ --hy-color-foreground:#e3e8df;
+ --hy-color-surface-neutral-control-emphasis:#414b45;
+ --hy-color-border-separator:#1c2920;
+ --hy-color-surface-neutral-control:#343d36;
+ --hy-color-surface-intent-primary:#bbd6ad;
+ --hy-color-foreground-inverted:#17221a;
+ --hy-color-border-control-disabled:#57644f;
+ --hy-color-surface-neutral-panel-inset-emphasis:#152217;
+ --hy-color-border:#53614c;
+ --hy-color-surface-neutral-control-emphasis-active:#55664a;
+ --hy-color-foreground-disabled:#7c8b75;
+}

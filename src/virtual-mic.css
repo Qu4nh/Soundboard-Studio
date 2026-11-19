@@ -1,0 +1,62 @@
+.virtual-mic-setup {
+  margin: 14px 0;
+  scroll-margin-block: 8px;
+  border: 1px solid #475448;
+  background: linear-gradient(180deg, #303a33, #28332d);
+  box-shadow: inset 0 1px #ffffff08;
+  color: #d4dfce;
+}
+
+.vm-row, .vm-identity, .vm-name, .vm-controls, .vm-status {
+  display: flex;
+  align-items: center;
+}
+
+.vm-row { min-height: 52px; padding: 4px 10px 4px 14px; gap: 6px 16px; justify-content: space-between; flex-wrap: wrap; }
+.vm-identity { gap: 10px; min-width: 0; }
+.vm-identity > svg { color: #aebfa7; flex: none; }
+.vm-name { gap: 3px 12px; flex-wrap: wrap; }
+.vm-name > strong { font-size: 13px; font-weight: 600; }
+.vm-status { gap: 6px; font-size: 11px; color: #a9b6aa; }
+.vm-status::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #7b897d; flex: none; }
+.vm-status[data-state=active] { color: #c3d7ae; }
+.vm-status[data-state=active]::before { background: #b4d399; }
+.vm-status[data-state=setup] { color: #dbc095; }
+.vm-status[data-state=setup]::before { background: #c4a875; }
+.vm-controls { gap: 8px; margin-left: auto; flex-wrap: wrap; }
+
+.studio-ui .virtual-mic-setup .switch-label { gap: 8px; min-height: 36px; margin: 0; color: #c6d1c0; white-space: nowrap; }
+.studio-ui .virtual-mic-setup .switch-label input { width: 36px; height: 34px; }
+.studio-ui .virtual-mic-setup .switch-label .switch { width: 36px; height: 19px; border-radius: 3px; }
+.studio-ui .virtual-mic-setup .switch-label .switch::before { width: 13px; height: 13px; border-radius: 2px; }
+.studio-ui .virtual-mic-setup .switch-label input:checked + .switch::before { left: 18px; }
+.studio-ui .virtual-mic-setup .switch-label input:focus-visible + .switch { outline: 1px solid #c4d5b6; outline-offset: 3px; }
+
+.studio-ui .virtual-mic-setup button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 34px; padding: 0 9px; background: transparent; border: 1px solid transparent; box-shadow: none; color: #c7d5c2; font-size: 12px; }
+.studio-ui .virtual-mic-setup button:hover:not(:disabled) { background: #ffffff0a; border-color: #98ad932c; }
+.studio-ui .virtual-mic-setup button:focus-visible { outline: 1px solid #c4d5b6; outline-offset: 2px; }
+.studio-ui .virtual-mic-setup button:disabled { opacity: .45; cursor: default; }
+.studio-ui .virtual-mic-setup .vm-details-toggle { width: 34px; padding: 0; }
+.vm-details-toggle[aria-expanded=true] svg { transform: rotate(180deg); }
+.studio-ui .virtual-mic-setup .vm-install { background: #a9bc95; border-color: #b9caa8; color: #182318; font-weight: 600; }
+.studio-ui .virtual-mic-setup .vm-install:hover:not(:disabled) { background: #c0cfae; border-color: #c0cfae; }
+
+.vm-details { border-top: 1px solid #485448; padding: 10px 14px 12px; }
+.vm-restore { display: flex; flex-wrap: wrap; gap: 3px 10px; margin: 0 0 6px; font-size: 12px; }
+.vm-restore dt, .vm-help { color: #b0bdae; }
+.vm-restore dd { margin: 0; overflow-wrap: anywhere; }
+.vm-actions { display: flex; flex-wrap: wrap; gap: 4px 8px; margin: 0 -6px 5px; }
+.vm-help, .vm-notice { font-size: 12px; line-height: 1.5; }
+.vm-help p { margin: 3px 0 0; }
+.vm-notice { margin: 0; padding: 6px 14px 9px; color: #d3bf9c; }
+.vm-error { color: #f0b496; }
+
+.vm-test { max-width: 360px; margin: 8px 0 4px; }
+.vm-test-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.studio-ui .vm-test-controls button { background: #18251e; border-color: #52644f; }
+.vm-test-time { font-size: 12px; font-variant-numeric: tabular-nums; color: #c3d7ae; }
+.vm-test-level { display: block; width: 100%; height: 12px; margin-top: 7px; }
+.vm-test-level::-webkit-meter-bar { background: #131f19; border: 1px solid #52644f; border-radius: 1px; }
+.vm-test-level::-webkit-meter-optimum-value { background: #a8c390; }
+.vm-test-level::-webkit-meter-suboptimum-value { background: #788c6b; }
+.vm-test p { margin: 4px 0; font-size: 12px; }

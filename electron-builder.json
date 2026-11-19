@@ -1,0 +1,35 @@
+{
+  "appId": "local.soundboard.studio",
+  "productName": "Soundboard Studio",
+  "extraMetadata": {
+    "description": "Soundboard Studio"
+  },
+  "electronDist": "node_modules/electron/dist",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "desktop/**/*",
+    "package.json",
+    "LICENSE"
+  ],
+  "extraResources": [
+    { "from": "node_modules/lucide-react/LICENSE", "to": "licenses/lucide-react.txt" },
+    { "from": "node_modules/react/LICENSE", "to": "licenses/react.txt" },
+    { "from": "node_modules/react-dom/LICENSE", "to": "licenses/react-dom.txt" },
+    { "from": "node_modules/tone/LICENSE.md", "to": "licenses/tone.md" },
+    { "from": "node_modules/uiohook-napi/LICENSE", "to": "licenses/uiohook-napi.txt" },
+    { "from": "node_modules/uiohook-napi/libuiohook/COPYING.LESSER.md", "to": "licenses/libuiohook/COPYING.LESSER.md" },
+    { "from": "node_modules/uiohook-napi/libuiohook/COPYING.md", "to": "licenses/libuiohook/COPYING.md" }
+  ],
+  "win": {
+    "target": "portable",
+    "signAndEditExecutable": false,
+    "icon": "public/brand/app.ico"
+  },
+  "portable": {
+    "artifactName": "Soundboard-Studio-${version}.exe"
+  },
+  "afterPack": "scripts/brand-after-pack.cjs"
+}
