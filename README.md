@@ -58,7 +58,7 @@ The interface is available in English and Vietnamese.
 
 ![Community Library in Soundboard Studio showing sound effects, search filters, and the active playback dock](docs/media/community-library.png)
 
-*Community Library shown with a demo catalog.*
+*Trending sounds and cover art from the live Community catalog.*
 
 ## Play soundboard clips through your microphone
 
